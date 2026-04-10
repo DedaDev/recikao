@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Nunito:wght@400;600;700&display=swap');
+
+.font-oswald { font-family: 'Oswald', sans-serif; }
+.font-nunito { font-family: 'Nunito', sans-serif; }
+
+.btn-fill {
+  position: absolute;
+  inset: 0;
+  background: #c82020;
+  width: 0%;
+  animation: fill-progress 10s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+  border-radius: inherit;
+}
+
+@keyframes fill-progress {
+  0%   { width: 0%; }
+  80%  { width: 85%; }
+  95%  { width: 92%; }
+  100% { width: 92%; }
+}
