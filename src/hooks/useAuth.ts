@@ -17,7 +17,7 @@ export function useAuth(): AuthState {
 
     if (callbackToken) {
       storeToken(callbackToken);
-      window.history.replaceState({}, "", "/");
+      window.history.replaceState({}, "", "/app");
       applyToken(callbackToken);
       return;
     }

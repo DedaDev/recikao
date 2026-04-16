@@ -7,6 +7,5 @@ export default function App() {
   const { token, userName, logout } = useAuth();
 
   if (!token) return <LoginPage />;
-
   return <TtsPage token={token} userName={userName!} onLogout={logout} />;
 }
