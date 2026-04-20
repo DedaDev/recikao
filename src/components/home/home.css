@@ -1,0 +1,47 @@
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.6; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
+.odometer-list { transition: transform 0.5s cubic-bezier(0.23,1,0.32,1); }
+.odometer-item { transition: opacity 0.4s, transform 0.4s; }
+
+.fade-up { animation: fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) forwards; opacity: 0; }
+.d2 { animation-delay: 0.2s; }
+.d3 { animation-delay: 0.34s; }
+.d4 { animation-delay: 0.48s; }
+
+.ticker-track { animation: ticker 30s linear infinite; display: flex; width: max-content; }
+
+.pulse-ring { animation: pulse-ring 1.2s ease-out infinite; }
+
+.example-card {
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.example-card.from-left  { transform: translateX(-48px); }
+.example-card.from-right { transform: translateX(48px); }
+.example-card.visible    { opacity: 1 !important; transform: translateX(0) !important; }
+
+.hero-headline { font-size: clamp(36px, 6.5vw, 96px); }
+
+@keyframes waveform-bar {
+  0%, 100% { transform: scaleY(0.12); }
+  50%       { transform: scaleY(1); }
+}
+.waveform-bar {
+  display: inline-block;
+  width: 3px;
+  border-radius: 2px;
+  background: #7c3aed;
+  transform-origin: bottom;
+  animation: waveform-bar 0.9s ease-in-out infinite;
+}

@@ -1,27 +1,37 @@
 import { API_BASE } from "../lib/api";
+import { Navbar } from "./home/Navbar";
 
 export function LoginPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center p-6">
-      <div className="w-full max-w-sm flex flex-col gap-6 items-center">
+    <div className="min-h-screen bg-surface flex flex-col">
+      <Navbar />
+      <div className="flex-1 flex items-center justify-center p-6">
+        <div className="w-full max-w-sm flex flex-col gap-6 items-center">
 
-        <span className="font-oswald text-3xl font-bold tracking-wide text-[#2d1e0f]">
-          Reci kao
-        </span>
+          <div className="text-center flex flex-col gap-2">
+            <h1 className="font-oswald text-4xl tracking-[0.08em] uppercase text-text-primary">
+              Reci<span className="text-brand">Kao</span>
+            </h1>
+            <p className="font-nunito text-sm text-text-voice">
+              Prijavi se da bi koristio servis
+            </p>
+          </div>
 
-        <p className="text-sm text-[#8a7060] text-center" style={{ fontFamily: "Nunito, sans-serif" }}>
-          Prijavi se da bi koristio servis
-        </p>
+          <div className="w-full bg-surface-raised border border-border-card rounded-2xl p-8 flex flex-col gap-5 items-center">
+            <a
+              href={`${API_BASE}/auth/google`}
+              className="w-full flex items-center justify-center gap-3 bg-surface border border-border-card rounded-xl px-5 py-3 font-nunito font-bold text-sm text-text-primary no-underline transition-all hover:border-brand/50 hover:shadow-[0_0_20px_rgba(124,58,237,0.12)]"
+            >
+              <GoogleIcon />
+              Prijavi se sa Google nalogom
+            </a>
 
-        <a
-          href={`${API_BASE}/auth/google`}
-          className="flex items-center gap-3 bg-white border-2 border-[#e0d4c0] rounded-xl px-5 py-3 text-[#2d1e0f] font-bold text-sm shadow-sm hover:border-[#e03030] transition-colors no-underline"
-          style={{ fontFamily: "Nunito, sans-serif" }}
-        >
-          <GoogleIcon />
-          Prijavi se sa Google nalogom
-        </a>
+            <p className="font-nunito text-xs text-text-voice/50 text-center">
+              Prvih 10 generisanja dnevno je besplatno
+            </p>
+          </div>
 
+        </div>
       </div>
     </div>
   );
