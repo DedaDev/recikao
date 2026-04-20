@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { loadToken, storeToken, removeToken, decodeToken, isTokenExpired } from "../lib/auth";
+import { loadToken, removeToken, decodeToken, isTokenExpired } from "../lib/auth";
 
 export interface AuthState {
   token: string | null;
@@ -12,16 +12,6 @@ export function useAuth(): AuthState {
   const [userName, setUserName] = useState<string | null>(null);
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const callbackToken = params.get("token");
-
-    if (callbackToken) {
-      storeToken(callbackToken);
-      window.history.replaceState({}, "", "/app");
-      applyToken(callbackToken);
-      return;
-    }
-
     const saved = loadToken();
     if (saved && !isTokenExpired(saved)) {
       applyToken(saved);
