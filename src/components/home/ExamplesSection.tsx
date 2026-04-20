@@ -147,7 +147,7 @@ export function ExamplesSection() {
   }
 
   return (
-    <section className="px-6 md:px-14 py-24 md:py-32 max-w-screen-xl mx-auto">
+    <section className="px-6 md:px-14 py-14 md:py-22 max-w-screen-xl mx-auto">
       <div className="flex flex-col gap-8">
         {EXAMPLES.map((example, i) => {
           const isPlaying = playing === example.id;

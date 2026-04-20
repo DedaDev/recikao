@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate, useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
-import { useAuth } from "./hooks/useAuth";
+import { useAuth, AuthProvider } from "./contexts/AuthContext";
 import { LoginPage } from "./components/LoginPage";
 import { TtsPage } from "./components/TtsPage";
 import HomePage from "./pages/HomePage.tsx";
@@ -42,7 +42,9 @@ function AppRoutes() {
 export default function App() {
   return (
     <BrowserRouter>
-      <AppRoutes />
+      <AuthProvider>
+        <AppRoutes />
+      </AuthProvider>
     </BrowserRouter>
   );
 }

@@ -4,7 +4,7 @@ export interface Voice {
 }
 
 export const VOICES: Voice[] = [
-  { id: "vucic",          label: "Vučić" },
+  { id: "vucic",          label: "Aleksandar Vučić" },
   { id: "zmaj",           label: "Zmaj od Šipova" },
   { id: "brnabic",        label: "Brnabić" },
   { id: "desingerica",    label: "Desingerica" },
